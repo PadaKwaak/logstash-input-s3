@@ -1,3 +1,6 @@
+## 3.4.2
+ - Not stopping processing in the middle of a file when a shutdown was initiated
+
 ## 3.4.1
  - Fixed link formatting for input type (documentation)
 
