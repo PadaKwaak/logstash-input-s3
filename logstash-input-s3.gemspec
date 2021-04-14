@@ -3,7 +3,7 @@ Gem::Specification.new do |s|
   s.name            = 'logstash-input-s3'
   s.version         = '3.8.4'
   s.licenses        = ['Apache-2.0']
-  s.summary         = "Streams events from files in a S3 bucket"
+  s.summary         = "Streams events from files in a S3 bucket, with shutdown fix"
   s.description     = "This gem is a Logstash plugin required to be installed on top of the Logstash core pipeline using $LS_HOME/bin/logstash-plugin install gemname. This gem is not a stand-alone program"
   s.authors         = ["Elastic"]
   s.email           = 'info@elastic.co'
