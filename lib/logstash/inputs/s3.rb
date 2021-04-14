@@ -187,6 +187,7 @@ class LogStash::Inputs::S3 < LogStash::Inputs::Base
 
     objects.each do |log|
       if stop?
+        @logger.info("S3 input: not processing next file due to shutdown")
         break
       else
         process_log(queue, log)
@@ -216,10 +217,6 @@ class LogStash::Inputs::S3 < LogStash::Inputs::Base
     # So all IO stuff: decompression, reading need to be done in the actual
     # input and send as bytes to the codecs.
     read_file(filename) do |line|
-      if stop?
-        @logger.warn("Logstash S3 input, stop reading in the middle of the file, we will read it again when logstash is started")
-        return false
-      end
 
       @codec.decode(line) do |event|
         # We are making an assumption concerning cloudfront
